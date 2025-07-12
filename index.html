@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Starry Nights Presentation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      /* Glossy black marble background with white veins */
+      background-image: url('https://placehold.co/1920x1080/0A0A0A/E0E0E0/black-marble-white-streaks'); /* Glossy black marble image */
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: #E0E0E0; /* Very light text color */
+      font-family: 'Noto Naskh Arabic', serif; /* Primary font for Arabic texts */
+      scroll-behavior: smooth;
+      direction: ltr; /* Changed to LTR for English */
+      text-align: left; /* Changed to left for English */
+    }
+    header {
+      background: linear-gradient(90deg, #000000, #101010); /* Very dark gradient for header */
+      color: #D4AF37; /* Bronze gold for headings */
+      padding: 4rem 1rem; /* Larger inner spacing */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8); /* Deeper, softer shadow */
+      text-align: center; /* Center header content */
+    }
+    header h1 {
+      margin: 0;
+      font-family: 'Playfair Display', serif; /* Elegant font for main headings */
+      font-size: 3.8rem; /* Larger, more luxurious font size */
+      /* 3D text effect */
+      text-shadow:
+        1px 1px 2px rgba(0, 0, 0, 0.9),
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        3px 3px 6px rgba(0, 0, 0, 0.7),
+        4px 4px 8px rgba(0, 0, 0, 0.6),
+        5px 5px 10px rgba(0, 0, 0, 0.5),
+        6px 6px 12px rgba(0, 0, 0, 0.4),
+        7px 7px 14px rgba(0, 0, 0, 0.3),
+        8px 8px 16px rgba(0, 0, 0, 0.2),
+        -1px -1px 2px rgba(255, 255, 255, 0.15); /* Subtle top-left highlight for gloss */
+      font-weight: 700; /* Heavier font for headings */
+      letter-spacing: 0.05em; /* Slight letter spacing */
+    }
+    header p {
+      margin: 1rem 0 0;
+      font-size: 1.6rem; /* Larger font size */
+      color: #E6B800; /* Slightly lighter gold color for description */
+      font-weight: 300; /* Thinner font for description */
+    }
+    /* Add style for placeholder images */
+    .placeholder-image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 2rem auto; /* Center image with top and bottom margins */
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(212, 175, 55, 0.2); /* Light gold borders */
+    }
+
+    .disclaimer-note {
+        background-color: rgba(40, 40, 40, 0.9);
+        color: #D4AF37;
+        padding: 1rem 2rem;
+        margin: 2rem auto;
+        max-width: 1100px;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    section {
+      padding: 4rem 12%; /* Larger inner spacing and wider margins */
+      /* Opaque background for sections to improve text contrast */
+      background-color: rgba(10, 10, 10, 0.9); /* Darker and more opaque background */
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15); /* Very light gold borders */
+      margin: 2rem auto; /* Center sections with larger margin */
+      max-width: 1100px; /* Max width for sections */
+      border-radius: 15px; /* More rounded corners */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Soft, deeper shadow for sections */
+      position: relative; /* To allow for additional background effects */
+      overflow: hidden; /* To ensure shadows or elements do not overflow */
+    }
+    /* Remove light marble effect inside sections as it may conflict with the new background */
+    section::before {
+        content: none; /* Remove previous effect */
+    }
+
+    section h2 {
+      font-family: 'Playfair Display', serif; /* Elegant font for subheadings */
+      font-size: 2.8rem; /* Larger, more prominent headings */
+      margin-bottom: 1.8rem;
+      color: #D4AF37; /* Bronze gold for headings */
+      /* 3D text effect */
+      text-shadow:
+        1px 1px 1px rgba(0, 0, 0, 0.8),
+        2px 2px 2px rgba(0, 0, 0, 0.7),
+        3px 3px 3px rgba(0, 0, 0, 0.6),
+        4px 4px 4px rgba(0, 0, 0, 0.5),
+        -0.5px -0.5px 1px rgba(255, 255, 255, 0.1); /* Subtle top-left highlight for gloss */
+      border-bottom: 3px solid #D4AF37; /* Gold line under headings */
+      padding-bottom: 0.8rem;
+      font-weight: 700;
+    }
+    p {
+        font-size: 1.2rem; /* Larger font size for normal text */
+        line-height: 2; /* Larger line height for readability */
+        color: #F0F0F0; /* Light text color */
+        margin-bottom: 1.5rem;
+    }
+    ul {
+      margin-left: 2.5rem; /* Larger margin for LTR */
+      line-height: 2.2; /* Larger line height for readability */
+      list-style: disc; /* Ensure bullets appear */
+      color: #C0C0C0; /* Slightly lighter text for lists */
+      font-size: 1.15rem; /* Slightly larger font size for lists */
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2.5rem 0; /* Larger margin */
+      background-color: rgba(20, 20, 20, 0.85); /* Dark, opaque background for table */
+      border-radius: 12px; /* Rounded corners for table */
+      overflow: hidden; /* Ensures rounded corners apply to content */
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    }
+    th, td {
+      border: 1px solid rgba(212, 175, 55, 0.1); /* Thinner, lighter gold borders */
+      padding: 1.2rem; /* Larger inner spacing */
+      text-align: center;
+      color: #F0F0F0; /* Light text color */
+      font-size: 1.1rem;
+    }
+    th {
+      background: rgba(40, 40, 40, 0.95); /* Dark background for table header */
+      color: #D4AF37; /* Bronze gold text for table header */
+      font-weight: 700;
+    }
+    .chart {
+      max-width: 700px; /* Larger chart width */
+      margin: 3.5rem auto; /* Larger margin */
+      text-align: center;
+      background-color: rgba(20, 20, 20, 0.85); /* Dark, opaque background for charts */
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6); /* Deeper inner shadow for charts */
+    }
+    .chart svg {
+        /* Increased width to make room for text */
+        width: 90%; /* Use percentage width for responsiveness */
+        height: 280px; /* Slightly increased height */
+        background-color: rgba(255, 255, 255, 0.01); /* Very light transparent background for SVG area */
+        border-radius: 10px;
+        border: 1px solid rgba(212, 175, 55, 0.08); /* Very light gold borders */
+        padding: 10px; /* Add internal spacing for SVG itself */
+    }
+    .chart text {
+        fill: #E0E0E0; /* Light text for chart labels */
+        font-size: 14px; /* Slightly larger font size for chart labels */
+        font-weight: 300;
+    }
+    .chart line {
+        stroke: rgba(212, 175, 55, 0.25); /* Slightly lighter gold grid lines */
+    }
+    .chart rect {
+        fill: #D4AF37; /* Bronze gold for bars */
+    }
+    .chart polyline {
+        stroke: #D4AF37; /* Bronze gold for line graph */
+        stroke-width: 5; /* Thicker line */
+        filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.6)); /* Light shadow for the line */
+    }
+    .chart circle {
+        fill: #D4AF37; /* Bronze gold for circles */
+        r: 6; /* Larger circles */
+        stroke: #FFF; /* White borders for circles */
+        stroke-width: 1.5;
+    }
+    details {
+      background: rgba(20, 20, 20, 0.85); /* Dark, opaque background for details */
+      padding: 1.8rem; /* Larger inner spacing */
+      border-radius: 12px; /* More rounded corners */
+      margin-top: 2.5rem; /* Larger margin */
+      color: #C0C0C0; /* Lighter text color */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(212, 175, 55, 0.1); /* Light gold borders */
+    }
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      color: #D4AF37; /* Bronze gold for summary */
+      font-size: 1.3rem; /* Larger font size */
+      font-family: 'Playfair Display', serif;
+      /* 3D text effect */
+      text-shadow:
+        1px 1px 1px rgba(0, 0, 0, 0.7),
+        2px 2px 2px rgba(0, 0, 0, 0.6),
+        -0.5px -0.5px 1px rgba(255, 255, 255, 0.1); /* Subtle top-left highlight for gloss */
+    }
+    .go-top {
+      position: fixed;
+      bottom: 50px; /* Larger distance from bottom */
+      left: 50px;
+      background: #D4AF37; /* Bronze gold */
+      color: #0F0F0F;
+      border-radius: 50%;
+      width: 60px; /* Larger button */
+      height: 60px; /* Larger button */
+      font-size: 2.2rem; /* Larger icon */
+      line-height: 60px;
+      text-align: center;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6); /* Larger button shadow */
+      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition with transform */
+    }
+    .go-top:hover {
+        background: #E6B800; /* Lighter gold on hover */
+        transform: translateY(-5px); /* Lift button slightly on hover */
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+    }
+    footer {
+      text-align: center;
+      padding: 4rem 1rem; /* Larger inner spacing */
+      background: linear-gradient(90deg, #000000, #101010); /* Very dark gradient for footer */
+      font-size: 1.1rem; /* Slightly larger font size */
+      color: #808080; /* Lighter gray for footer text */
+      margin-top: 4rem; /* Margin above footer */
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+    }
+    a {
+        color: #D4AF37; /* Bronze gold links */
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    a:hover {
+        color: #E6B800; /* Lighter gold on hover */
+        text-decoration: underline;
+    }
+    /* iframe style for Google Form */
+    .google-form-iframe {
+        width: 100%;
+        height: 800px; /* Adjust height as per form length */
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        background-color: rgba(255, 255, 255, 0.05); /* Light transparent background for iframe */
+    }
+
+    /* --- Responsive Adjustments for Mobile --- */
+    @media (max-width: 768px) {
+      header {
+        padding: 2rem 0.5rem; /* Smaller padding for header on mobile */
+      }
+      header h1 {
+        font-size: 2.5rem; /* Smaller font size for main heading */
+      }
+      header p {
+        font-size: 1.2rem; /* Smaller font size for header description */
+      }
+      .disclaimer-note {
+        padding: 0.8rem 1rem;
+        margin: 1rem auto;
+        font-size: 0.95rem;
+      }
+      section {
+        padding: 2rem 5%; /* Smaller padding for sections */
+        margin: 1rem auto; /* Smaller margin for sections */
+      }
+      section h2 {
+        font-size: 2rem; /* Smaller font size for subheadings */
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: 1rem; /* Smaller font size for general text */
+        line-height: 1.8; /* Adjusted line height */
+      }
+      ul {
+        margin-left: 1.5rem; /* Smaller margin for lists */
+        font-size: 0.95rem; /* Smaller font size for lists */
+        line-height: 1.8;
+      }
+      table {
+        margin: 1.5rem 0; /* Smaller margin for tables */
+        display: block; /* Allows table to scroll horizontally */
+        overflow-x: auto; /* Enables horizontal scrolling */
+        white-space: nowrap; /* Prevents text wrapping in table cells */
+      }
+      th, td {
+        padding: 0.8rem; /* Smaller padding for table cells */
+        font-size: 0.9rem; /* Smaller font size for table text */
+      }
+      .chart {
+        padding: 1.5rem; /* Smaller padding for charts */
+        margin: 2rem auto; /* Smaller margin for charts */
+        overflow-x: auto; /* Enables horizontal scrolling for charts */
+      }
+      .chart svg {
+        min-width: 450px; /* Ensure SVG has a minimum width to enable scrolling if needed */
+        width: 100%; /* Use 100% width within its scrollable container */
+      }
+      .chart text {
+        font-size: 12px; /* Smaller font size for chart labels */
+      }
+      details {
+        padding: 1.2rem; /* Smaller padding for details */
+        margin-top: 1.5rem; /* Smaller margin for details */
+      }
+      summary {
+        font-size: 1.1rem; /* Smaller font size for summary */
+      }
+      footer {
+        padding: 2rem 0.5rem; /* Smaller padding for footer */
+        font-size: 0.9rem; /* Smaller font size for footer text */
+        margin-top: 2rem;
+      }
+      .go-top {
+        bottom: 20px; /* Adjust position for mobile */
+        left: 20px; /* Adjust position for mobile */
+        width: 50px; /* Smaller button */
+        height: 50px; /* Smaller button */
+        font-size: 1.8rem; /* Smaller icon */
+        line-height: 50px;
+      }
+      .google-form-iframe {
+          height: 600px; /* Adjust height for mobile */
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2rem; /* Even smaller for very small phones */
+      }
+      header p {
+        font-size: 1rem;
+      }
+      section h2 {
+        font-size: 1.8rem;
+      }
+      p, ul, th, td, .disclaimer-note, summary, footer p {
+        font-size: 0.9rem; /* Further reduction for very small screens */
+      }
+      ul {
+        margin-left: 1rem; /* Further reduction of list margin */
+      }
+      .go-top {
+        bottom: 15px;
+        left: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.6rem;
+        line-height: 45px;
+      }
+      .google-form-iframe {
+          height: 500px; /* Further adjust height for very small screens */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Starry Nights Resort Casino</h1>
+    <p>Where Splendor Begins at Sunset</p>
+    <!-- Placeholder for Resort Casino Logo -->
+    <img src="casino_logo.png" alt="Starry Nights Resort Casino Logo" class="placeholder-image" style="margin-top: 3rem;">
+  </header>
+
+  <!-- Disclaimer Note for the working title -->
+  <div class="disclaimer-note">
+    <strong>Note:</strong> Throughout this document, 'Starry Nights Resort & Casino' is used as a working title and may be revised pending final brand strategy.
+  </div>
+
+  <section>
+    <h2>1. Executive Summary</h2>
+    <p>Starry Nights is a luxurious integrated resort in the UAE combining Emirati cultural sophistication, world-class gaming, and exquisite hospitality services. Our goal: to compete with Wynn Al Marjan Resort by offering a distinctive guest experience. Throughout this document, ‘Starry Nights Resort & Casino’ is used as a working title and may be revised pending final brand strategy.</p>
+    <!-- Placeholder for Luxury Resort Overview Image -->
+    <img src="casino_hotel_basic.png" alt="Luxury Resort Overview" class="placeholder-image">
+  </section>
+
+  <section>
+    <h2>2. Market Opportunities</h2>
+    <ul>
+      <li>UAE casino market size expected to reach $3–5 billion USD by 2030</li>
+      <li>Wynn's $5.1 billion USD investment indicates strong demand</li>
+      <li>Ras Al Khaimah property values jumped 25,000% since 2017</li>
+      <li>Diverse audience: Emirati nationals + 9 million foreign residents</li>
+    </ul>
+    <div class="chart">
+      <svg width="100%" height="280">
+        <!-- Horizontal grid lines -->
+        <g stroke="rgba(212, 175, 55, 0.25)">
+          <line x1="80" y1="220" x2="480" y2="220"/>
+          <line x1="80" y1="170" x2="480" y2="170"/>
+          <line x1="80" y1="120" x2="480" y2="120"/>
+          <line x1="80" y1="70"  x2="480" y2="70"/>
+          <!-- New line for 30k% -->
+          <line x1="80" y1="20"  x2="480" y2="20"/>
+        </g>
+        <!-- Vertical labels -->
+        <!-- x-coordinates for text adjusted to prevent overlap -->
+        <text x="55" y="224" font-size="14" fill="#E0E0E0" text-anchor="end">0%</text>
+        <text x="55" y="174" font-size="14" fill="#E0E0E0" text-anchor="end">5k%</text>
+        <text x="55" y="124" font-size="14" fill="#E0E0E0" text-anchor="end">10k%</text>
+        <text x="55" y="74"  font-size="14" fill="#E0E0E0" text-anchor="end">25k%</text>
+        <!-- New text for 30k% -->
+        <text x="55" y="24"  font-size="14" fill="#E0E0E0" text-anchor="end">30k%</text>
+        <!-- Bars -->
+        <rect x="100"  y="170" width="60" height="50" fill="#D4AF37"/>
+        <rect x="220" y="120"  width="60" height="100" fill="#D4AF37"/>
+        <rect x="340" y="20"  width="60" height="200" fill="#D4AF37"/>
+        <!-- Year labels -->
+        <text x="130"  y="250" font-size="14" fill="#E0E0E0" text-anchor="middle">2017</text>
+        <text x="250" y="250" font-size="14" fill="#E0E0E0" text-anchor="middle">2022</text>
+        <text x="370" y="250" font-size="14" fill="#E0E0E0" text-anchor="middle">2025</text>
+      </svg>
+      <p><em>Ras Al Khaimah Property Growth</em></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. Benchmarking</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Resort</th>
+          <th>Location</th>
+          <th>Investment</th>
+          <th>Casino Area</th>
+          <th>Number of Rooms</th>
+          <th>Average Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Solaire</td>
+          <td>Manila, Philippines</td>
+          <td>$1.2 Billion USD</td>
+          <td>30,200 m²</td>
+          <td>793</td>
+          <td>~274 USD/night</td>
+        </tr>
+        <tr>
+          <td>Marina Bay Sands</td>
+          <td>Singapore</td>
+          <td>$5.6 Billion USD</td>
+          <td>15,000 m²</td>
+          <td>2,561</td>
+          <td>~788–1,149 USD/night</td>
+        </tr>
+        <tr>
+          <td>Wynn Al Marjan</td>
+          <td>Ras Al Khaimah</td>
+          <td>$5.1 Billion USD</td>
+          <td>18,500 m²</td>
+          <td>1,542</td>
+          <td>TBD</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>4. Concept Design</h2>
+    <p>Theme: <strong>"Palace of Prosperity"</strong> blending Emirati elegance with global gaming.</p>
+    <p>"Starry Nights" will be designed as a luxurious boutique resort focusing on an exclusive experience. To align with the target CAPEX of $1.8-2.2 billion USD, the project size will be adjusted to be more efficient while maintaining high luxury standards.</p>
+    <!-- Placeholder for Palace of Prosperity Concept Image -->
+    <img src="casino_hotel_room.png" alt="Palace of Prosperity Concept" class="placeholder-image">
+    <details>
+      <summary>Key Features</summary>
+      <ul>
+        <li>Boutique casino with an area ranging from <strong>6,000–8,000 m²</strong> (to ensure an exclusive experience).</li>
+        <li><strong>400–500 luxury rooms and villas</strong> (focusing on quality and service).</li>
+        <li>12 signature restaurants (Arabic, Asian, Mediterranean).</li>
+        <li>Cultural theater, spa, and wellness center.</li>
+        <li>Sharia-compliant family areas.</li>
+      </ul>
+    </details>
+  </section>
+
+  <section>
+    <h2>5. Financial Model</h2>
+    <p>Capital Expenditure (CAPEX): <strong>$1.8–2.2 Billion USD</strong> | Target Return: <strong>18–22%</strong> by Year 5</p>
+    <div class="chart">
+      <svg width="100%" height="280">
+        <g stroke="rgba(212, 175, 55, 0.25)">
+          <line x1="80" y1="220" x2="480" y2="220"/>
+          <line x1="80" y1="170" x2="480" y2="170"/>
+          <line x1="80" y1="120" x2="480" y2="120"/>
+          <line x1="80" y1="70"  x2="480" y2="70"/>
+        </g>
+        <text x="55" y="224" font-size="14" fill="#E0E0E0" text-anchor="end">0%</text>
+        <text x="55" y="174" font-size="14" fill="#E0E0E0" text-anchor="end">5%</text>
+        <text x="55" y="124" font-size="14" fill="#E0E0E0" text-anchor="end">10%</text>
+        <text x="55" y="74"  font-size="14" fill="#E0E0E0" text-anchor="end">20%</text>
+        <polyline points="100,200 190,150 280,120 370,80 460,70"
+                  stroke="#D4AF37" stroke-width="5" fill="none"/>
+        <circle cx="100"  cy="200" r="6" fill="#D4AF37" stroke="#FFF" stroke-width="1.5"/>
+        <circle cx="190" cy="150" r="6" fill="#D4AF37" stroke="#FFF" stroke-width="1.5"/>
+        <circle cx="280" cy="120" r="6" fill="#D4AF37" stroke="#FFF" stroke-width="1.5"/>
+        <circle cx="370" cy="80"  r="6" fill="#D4AF37" stroke="#FFF" stroke-width="1.5"/>
+        <circle cx="460" cy="70"  r="6" fill="#D4AF37" stroke="#FFF" stroke-width="1.5"/>
+        <text x="130"  y="250" font-size="14" fill="#E0E0E0" text-anchor="middle">Year 1</text>
+        <text x="220" y="250" font-size="14" fill="#E0E0E0" text-anchor="middle">Year 2</text>
+        <text x="310" y="250" font-size="14" fill="#E0E0E0" text-anchor="middle">Year 3</text>
+        <text x="400" y="250" font-size="14" fill="#E0E0E0" text-anchor="middle">Year 4</text>
+        <text x="490" y="250" font-size="14" fill="#E0E0E0" text-anchor="middle">Year 5</text>
+      </svg>
+      <p><em>Projected Return on Investment</em></p>
+    </div>
+    <details>
+      <summary>Revenue Streams</summary>
+      <ul>
+        <li>Gaming: 40%</li>
+        <li>Hospitality, F&B: 30%</li>
+        <li>Retail & Events: 20%</li>
+        <li>Luxury Services: 10%</li>
+      </ul>
+    </details>
+
+    <!-- Investment and Expense Details Box -->
+    <details style="margin-top: 2.5rem;">
+      <summary>Investment and Expense Details</summary>
+      <p style="margin-top: 1.5rem;">Based on the target Capital Expenditure (CAPEX) of <strong>$2.2 billion USD</strong>, here is an estimated breakdown of costs:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Estimated Cost (Million USD)</th>
+            <th>Percentage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Construction and Infrastructure</strong> (Structural works, MEP systems, initial finishes)</td>
+            <td>1,350 - 1,450</td>
+            <td>61% - 66%</td>
+          </tr>
+          <tr>
+            <td><strong>Fixtures, Furniture & Equipment (FF&E)</strong> (Luxury finishes, furniture, kitchen equipment, casino devices, technology)</td>
+            <td>420 - 480</td>
+            <td>19% - 22%</td>
+          </tr>
+          <tr>
+            <td><strong>Pre-opening and Marketing Costs</strong> (Recruitment, training, initial licenses, marketing campaigns)</td>
+            <td>110 - 130</td>
+            <td>5% - 6%</td>
+          </tr>
+          <tr>
+            <td><strong>Contingency Reserve</strong> (For unforeseen costs and design changes)</td>
+            <td>210 - 250</td>
+            <td>10% - 11%</td>
+          </tr>
+          <tr>
+            <td><strong>Total Estimated Capital Expenditure (CAPEX)</strong></td>
+            <td><strong>2,090 - 2,310</strong></td>
+            <td><strong>~100%</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #D4AF37; margin-top: 2.5rem; border-bottom: 2px solid #D4AF37; padding-bottom: 0.5rem;">Estimated Operating Expenditure (OPEX) for Year 1</h3>
+      <p>Operating expenditures for the first year (including salaries, utilities, maintenance, ongoing marketing, gaming fees, insurance, and supplies) are expected to range between <strong>$250 - $350 million USD</strong>. This estimate reflects the luxurious nature of the resort and the need for high levels of service and operation.</p>
+
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #D4AF37; margin-top: 2.5rem; border-bottom: 2px solid #D4AF37; padding-bottom: 0.5rem;">Promising Real Estate Investment Areas Near Al Marjan</h3>
+      <p>In addition to Al Marjan Island itself, which is experiencing significant growth, several nearby areas in Ras Al Khaimah and the Northern Emirates offer high potential for land appreciation, driven by overall tourism and economic growth:</p>
+      <ul>
+        <li><strong>Al Marjan Island:</strong> Remains the primary growth destination, with major projects like Wynn Al Marjan continuing to attract investment and raise surrounding land values.</li>
+        <li><strong>Mina Al Arab:</strong> An integrated coastal community featuring villas, apartments, and hotels, offering a luxurious living environment with direct access to beaches and lagoons. Expected to benefit from the increasing interest in Ras Al Khaimah.</li>
+        <li><li><strong>Al Hamra Village:</strong> An established community with world-class golf courses, a marina, and residential and commercial areas. Provides stable rental yields and growth potential boosted by new infrastructure.</li>
+        <li><strong>Umm Al Quwain Coastline:</strong> Although currently less developed, coastal areas in Umm Al Quwain represent long-term investment opportunities with significant potential for future tourism and real estate development, especially with increasing demand for alternative destinations.</li>
+        <li><strong>Selected areas in Ajman and Sharjah near Ras Al Khaimah:</strong> Some border or coastal areas in Ajman and Sharjah may experience land value appreciation due to their proximity to Ras Al Khaimah and expanding infrastructure.</li>
+      </ul>
+    </details>
+
+    <!-- New clickable box for Financial Income Statement -->
+    <details style="margin-top: 2.5rem;">
+      <summary>Projected Income Statement (5 Years)</summary>
+      <p style="margin-top: 1.5rem;">This projected income statement provides a high-level overview of the financial performance for "Starry Nights" over the first five years, based on a total CAPEX of $2.2 billion USD and current market outlooks. The initial Return on Investment (ROI) for Year 1 is projected at approximately <strong>3.06%</strong>, demonstrating a strong foundational start with a clear growth trajectory towards the target 18-22% ROI by Year 5.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Financial Metric (Million USD)</th>
+            <th>Year 1 (2026)</th>
+            <th>Year 2 (2027)</th>
+            <th>Year 3 (2028)</th>
+            <th>Year 4 (2029)</th>
+            <th>Year 5 (2030)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Revenue</strong></td>
+            <td>600.00</td>
+            <td>750.00</td>
+            <td>900.00</td>
+            <td>1035.00</td>
+            <td>1086.75</td>
+          </tr>
+          <tr>
+            <td>Operating Expenses (OPEX)</td>
+            <td>350.00</td>
+            <td>367.50</td>
+            <td>385.88</td>
+            <td>405.17</td>
+            <td>425.43</td>
+          </tr>
+          <tr>
+            <td><strong>EBITDA</strong></td>
+            <td>250.00</td>
+            <td>382.50</td>
+            <td>514.12</td>
+            <td>629.83</td>
+            <td>661.32</td>
+          </tr>
+          <tr>
+            <td>Depreciation & Amortization (D&A)</td>
+            <td>110.00</td>
+            <td>110.00</td>
+            <td>110.00</td>
+            <td>110.00</td>
+            <td>110.00</td>
+          </tr>
+          <tr>
+            <td><strong>EBIT</strong></td>
+            <td>140.00</td>
+            <td>272.50</td>
+            <td>404.12</td>
+            <td>519.83</td>
+            <td>551.32</td>
+          </tr>
+          <tr>
+            <td>Interest Expense</td>
+            <td>66.00</td>
+            <td>66.00</td>
+            <td>66.00</td>
+            <td>66.00</td>
+            <td>66.00</td>
+          </tr>
+          <tr>
+            <td><strong>Earnings Before Tax (EBT)</strong></td>
+            <td>74.00</td>
+            <td>206.50</td>
+            <td>338.12</td>
+            <td>453.83</td>
+            <td>485.32</td>
+          </tr>
+          <tr>
+            <td>Taxes (9%)</td>
+            <td>6.66</td>
+            <td>18.58</td>
+            <td>30.43</td>
+            <td>40.84</td>
+            <td>43.68</td>
+          </tr>
+          <tr>
+            <td><strong>Net Income</strong></td>
+            <td><strong>67.34</strong></td>
+            <td><strong>187.92</strong></td>
+            <td><strong>307.69</strong></td>
+            <td><strong>412.99</strong></td>
+            <td><strong>441.64</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Return on Investment (ROI)</strong></td>
+            <td><strong>3.06%</strong></td>
+            <td><strong>8.54%</strong></td>
+            <td><strong>13.99%</strong></td>
+            <td><strong>18.77%</strong></td>
+                            <td><strong>20.07%</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size: 0.9rem; color: #808080; text-align: center; margin-top: 1rem;">
+          <em>Note: All figures are estimates and subject to market fluctuations and operational performance. Depreciation and Interest are assumed constant for simplicity in this high-level projection.</em>
+      </p>
+    </details>
+  </section>
+
+  <section>
+    <h2>6. Strategic Partnerships</h2>
+    <details>
+      <summary>Potential Collaborators</summary>
+      <ul>
+        <li>Government Entities & Sovereign Wealth Funds: Collaborating with entities like Mubadala Investment Company, Abu Dhabi Investment Authority (ADIA), and Investment Corporation of Dubai (ICD) can provide significant capital backing and strategic alignment with national development goals.</li>
+        <li>Leading Local & International Developers: Partnering with established real estate and infrastructure developers (e.g., Emaar Properties, Aldar Properties, Meraas) for joint ventures or project-specific collaborations.</li>
+        <li>Technology & Innovation Hubs: Engaging with tech parks and innovation centers (e.g., Dubai Internet City, Masdar City) to integrate cutting-edge technologies and foster a culture of innovation.</li>
+        <li>Key Service Providers: Forming alliances with top-tier legal firms, consultancies, and marketing agencies to ensure best-in-class support across all operations.</li>
+        <li>UAE Banks open for financing (supporting High Net Worth Emirati):
+            <ul>
+                <li><strong>First Abu Dhabi Bank (FAB):</strong> As the UAE's largest bank, FAB has extensive capabilities in corporate and investment banking, private banking, and wealth management, catering to high-net-worth individuals and large-scale financing needs.</li>
+                <li><strong>Emirates NBD:</strong> A leading banking group in the MENAT region, Emirates NBD offers comprehensive private banking and wealth management services, and is well-regarded for its expertise in supporting HNW individuals and major corporate projects.</li>
+                <li><strong>Abu Dhabi Commercial Bank (ADCB):</strong> ADCB provides a wide range of corporate and investment banking solutions, coupled with strong private banking services tailored for affluent clients.</li>
+                <li><strong>Mashreq Bank:</strong> Known for its innovative banking solutions and strong corporate banking arm, Mashreq also offers private banking services that could be suitable for high-net-worth Emiratis seeking diverse financial solutions.</li>
+                <li><strong>Dubai Islamic Bank (DIB):</strong> As the largest Islamic bank in the UAE, DIB offers Sharia-compliant financing and wealth management solutions, which are often preferred by many HNW Emiratis.</li>
+                <li><strong>Abu Dhabi Islamic Bank (ADIB):</strong> Another prominent Islamic bank, ADIB provides a full suite of Sharia-compliant banking and investment services, including dedicated private banking for wealthy clients.</li>
+            </ul>
+        </li>
+      </ul>
+    </details>
+  </section>
+
+  <section>
+    <h2>7. Regulatory Pathway</h2>
+    <details>
+      <summary>GCGRA Licensing Strategy</summary>
+      <ul>
+        <li>Compliance with UAE General Commercial Gaming Regulatory Authority (GCGRA) regulations</li>
+        <li>Majority Emirati ownership structure</li>
+        <li>Responsible gaming and cultural safeguards</li>
+        <li>No use of national or religious symbols</li>
+      </ul>
+    </details>
+  </section>
+
+  <section>
+    <h2>8. Brand Identity</h2>
+    <p>Name Ideas:</p>
+    <ul>
+      <li><strong>Palace of Prosperity</strong> (Qasr al-Tharwa)</li>
+      <li><strong>Starry Nights</strong> (Layali al-Nujoom)</li>
+      <li><strong>House of Leadership</strong> (Dar al-Riyadah)</li>
+    </ul>
+    <details>
+      <summary>Logo and Slogan</summary>
+      <p>Integrate a falcon image with golden dice<br>
+         Slogan: "Where Splendor Begins at Sunset"</p>
+    </details>
+  </section>
+
+  <section>
+    <h2>9. Conclusion and Contact</h2>
+    <p><strong>"Let's create the next entertainment icon in the UAE together."</strong></p>
+    <p>Contact: Rebecca Topacio & Benito Amurao<br>
+       Phone: +63 917 3280 957</p>
+    <!-- Contact Form section, now using details tag directly -->
+    <details id="contactFormDetails" style="margin-top: 2.5rem;">
+      <summary>Contact Form</summary>
+      <p style="margin-top: 1.5rem;">Please fill out the form below to contact us and we will get back to you as soon as possible.</p>
+      <!-- Google Form Embed -->
+      <iframe src="https://forms.gle/MAQHpzQfmkHtHk6j9?hl=en" class="google-form-iframe" title="Contact Form" allow="clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+      <p style="font-size: 0.9rem; color: #808080; text-align: center; margin-top: 1rem;">
+          <strong>Note:</strong> To receive emails directly from this form, please ensure email notifications are set up in your Google Form settings.
+      </p>
+    </details>
+  </section>
+
+  <footer>
+    <p>© 2025 Starry Nights. All rights reserved.</p>
+  </footer>
+
+  <div class="go-top" onclick="scrollToTopAndCloseContact()">⬆</div>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const btn = document.querySelector('.go-top');
+      btn.style.display = window.scrollY > window.innerHeight * 0.5 ? 'block' : 'none';
+    });
+
+    function scrollToTopAndCloseContact() {
+      // Scroll to the top of the page
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Get the contact form details element
+      const contactFormDetails = document.getElementById('contactFormDetails');
+
+      // If the contact form is open, close it
+      if (contactFormDetails && contactFormDetails.open) {
+        contactFormDetails.open = false;
+      }
+    }
+  </script>
+
+</body>
+</html>
